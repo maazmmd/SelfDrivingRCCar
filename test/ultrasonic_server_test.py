@@ -36,5 +36,5 @@ class SensorStreamingTest(object):
 
 
 if __name__ == '__main__':
-    h, p = "192.168.1.100", 8002
+    h, p = "192.168.1.11", 8002
     SensorStreamingTest(h, p)

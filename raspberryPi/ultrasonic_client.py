@@ -8,15 +8,15 @@ GPIO.setwarnings(False)
 
 # create a socket and bind socket to the host
 client_socket = socket(AF_INET, SOCK_STREAM)
-client_socket.connect(('192.168.1.100', 8002))
+client_socket.connect(('192.168.1.11', 8002))
 
 def measure():
     """
     measure distance
     """
-    GPIO.output(GPIO_TRIGGER, True)
+    GPIO.output(GPIO_TRIGGER, GPIO.HIGH)
     time.sleep(0.00001)
-    GPIO.output(GPIO_TRIGGER, False)
+    GPIO.output(GPIO_TRIGGER, GPIO.LOW)
     start = time.time()
 
     while GPIO.input(GPIO_ECHO)==0:
@@ -26,23 +26,24 @@ def measure():
         stop = time.time()
 
     elapsed = stop-start
-    distance = (elapsed * 34300)/2
+    # distance = (elapsed * 34300)/2
+    distance = round(elapsed * 17150, 2)
 
     return distance
 
 # referring to the pins by GPIO numbers
-GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BOARD)
 
 # define pi GPIO
-GPIO_TRIGGER = 23
-GPIO_ECHO    = 24
+GPIO_TRIGGER = 7
+GPIO_ECHO    = 11
 
 # output pin: Trigger
 GPIO.setup(GPIO_TRIGGER,GPIO.OUT)
 # input pin: Echo
 GPIO.setup(GPIO_ECHO,GPIO.IN)
 # initialize trigger pin to low
-GPIO.output(GPIO_TRIGGER, False)
+GPIO.output(GPIO_TRIGGER, GPIO.LOW)
 
 try:
     while True:

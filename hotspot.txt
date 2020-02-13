@@ -1,0 +1,9 @@
+IP Addresses
+
+Comp : 192.168.1.11
+
+Pi : 172.20.10.3
+
+Find and replace (sed commando usage)
+
+https://superuser.com/questions/428493/how-can-i-do-a-recursive-find-and-replace-from-the-command-line
