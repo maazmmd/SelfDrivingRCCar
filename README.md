@@ -1,4 +1,4 @@
-## AutoRCCar
+## Self Driving RC Car
 ### Python3 + OpenCV3
 
 See self-driving in action  
@@ -17,6 +17,13 @@ This project builds a self-driving RC car using Raspberry Pi, Arduino and open s
      ```source activate auto-rccar```
   
   &ensp; To exit, simply close the terminal window. More info about managing Anaconda environment, please see [here](https://conda.io/docs/user-guide/tasks/manage-environments.html).
+  
+### Ignore the above setup, make sure you have below version of Python and OpenCV
+    1. Python 2.7.16
+    2. Open CV - 4.1.0 
+       $ python
+       $ import cv2
+       $ print cv2.__version__
   
 ### About the files
 **test/**  
